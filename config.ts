@@ -1,6 +1,6 @@
-{
+export const config = {
     // General comment: think very carefully about required fields - you can't added required fields to a schema once released without a breaking change
-    "$schema": "<path-to-online-json-schema>" // This can aid clients with generating classes etc., if a pain forget it. Do not provide a path that exposes DNS that we don't want exposed, or that can change, such an online-path is a contract.
+    "$schema": "<path-to-online-json-schema>", // This can aid clients with generating classes etc., if a pain forget it. Do not provide a path that exposes DNS that we don't want exposed, or that can change, such an online-path is a contract.
     "schemaVersion": "0.1", // The version of the schema of this configuration JSON. I think Major.Minor is enough - either you have a breaking change increasing the monitor, or an addition increasing the minor. More complex versioning works better for code, not data.
     "widgets": {
         "insights": {
@@ -14,10 +14,10 @@
                     "properties": { // Custom properties for the videoIndex widget this is for extensibility, clients with typed languages should represent this as open string->object
                         "translations": {
                             "en-EN": {
-                                uri": "https://www.contoso.com/vi/asw34eds/index/en-EN"
+                                "uri": "https://www.contoso.com/vi/asw34eds/index/en-EN"
                             },
                             "he-IL": {
-                                uri": "https://www.contoso.com/vi/asw34eds/index/he-IL"
+                                "uri": "https://www.contoso.com/vi/asw34eds/index/he-IL"
                             }
                         }
                     }
