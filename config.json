@@ -1,0 +1,50 @@
+{
+    "version": "1.0.0",
+    "widgets": {
+        "version": "5.3.1",
+        "insights": {
+            "render": {
+                "people": true,
+                "topics": true
+            },
+            "locale": "de",
+            "tab": "timeline"
+        },
+        "player": {
+            "t": 123,
+            "captions": "de-DE",
+            "showCaptions": false,
+            "type": "video",
+            "autoplay": false,
+            "language": "en-EN"
+        }
+    },
+    "api": {
+        "index": {
+            "uri": "https://www.bloomberg.com/vi/asw34eds/index"
+        },
+        "sprites": {
+            "people": {
+                "uri": "https://www.bloomberg.com/sprites/12345/people",
+                "paging": true,
+                "pageSize": 100,
+                "authorization": "eyasdase2394294712094124124==="
+            },
+            "keyframes": {
+                "uri": "https://www.bloomberg.com/sprites/asw34eds/keyframes",
+                "authorization": "eyasdase2394294712094124124===",
+                "pageSize": 100
+            }
+        },
+        "download": {
+
+        },
+        "translations": {
+            "en-EN" : {
+                "index":  {
+                    "uri": "https://www.bloomberg.com/vi/asw34eds/index/en"
+                }
+            }   
+        }
+    }
+}
