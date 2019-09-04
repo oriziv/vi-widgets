@@ -1,5 +1,7 @@
 {
-    "version": "1.0.0",
+    "schema-version": "0.0.1",
+    "api-version": "1.0.0",
+    "data-version": "1.0.0",
     "widgets": {
         "version": "5.3.1",
         "insights": {
