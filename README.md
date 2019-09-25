@@ -2,4 +2,7 @@
 
 ## Schema definition for VI Widgets
 based on http://json-schema.org/
-Example: implementation/insights.example.ts
+
+[Schema](schema/insights.schema.json)
+
+[Example](examples/contoso.vi-insights.widget.config.json)
