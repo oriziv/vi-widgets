@@ -1,0 +1,10 @@
+{
+  "$id": "https://api.videoindexer.ai/schema/widgets.schema.json",
+  "$schema": "https://api.videoindexer.ai/schema/widgets-data-source.schema.json",
+  "schemaVersion": "1.0",
+  "properties": {
+    "uri": {
+       "type": "string"
+    }
+  }
+}

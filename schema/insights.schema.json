@@ -1,0 +1,69 @@
+{
+    "$id":"https://api.videoindexer.ai/schema/widgets",
+    "$schema": "http://json-schema.org/draft-07/schema#", 
+    "schemaVersion": "0.1",
+    "title": "Video Indexer Widgets Definition",
+    "description": "Video Indexer Widgets API",
+    "type": "object",
+    "properties": {
+        "insights": {
+            "description": "The insights widget configuration",
+            "type": "object",
+            "properties": {
+                "data_sources": {
+                    "type": "object",
+                    "properties": {
+                        "video_index": {
+                            "type":"object",
+                            "properties": {
+                                "uri": {
+                                    "type": "string"
+                                },
+                                "httpHeaders": {
+                                    "type": "object",
+                                    "properties": {
+                                        "authorization": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        "people_sprite": {
+                            "type":"object",
+                            "properties": {
+                                "template_uri": {
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The locale of the widget to render with"
+                },
+                "tab": {
+                    "type": "string",
+                    "description": "The tab to be selected at first render"
+                },
+                "render": {
+                    "description": "Control what insights to render. default is all",
+                    "type": "object",
+                    "properties": {
+                        "people": {
+                            "type": "boolean",
+                            "description": "People section"
+                        },
+                        "topics": {
+                            "type": "boolean",
+                            "description": "Render Topics widget"
+                        }
+                    }
+                }
+
+
+            }
+        }
+    }
+}
