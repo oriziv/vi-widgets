@@ -2,7 +2,7 @@
   "$id": "https://api.videoindexer.ai/schema/widgets.schema.json",
   "$schema": "https://api.videoindexer.ai/schema/widgets-data-source.schema.json",
   "schemaVersion": "1.0",
-  "properties": {
+  "properties": { // This seems incomplete, I ignore it until you say it's ready for review or you want to work on in together
     "uri": {
        "type": "string"
     }
