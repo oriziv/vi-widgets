@@ -10,20 +10,12 @@ export const config = {
                 "widgetDataSources": { // A multi-map from data source name (string) to a description of how to get that data
                     "videoIndex": { 
                         "schemaVersion": "1.0", // The versions of the schema of data needed by the widget
-                        "uri": "https://www.contoso.com/vi/asw34eds/index/default", // The widget will GET this URL
+                        "init_language": "en-US",
+                        "template_uri": "https://www.contoso.com/vi/{$videoId}/index/default/?lang={$language}", // The widget will GET this URL
                         "httpHeaders": { // A dictionary of headers the widget will include with requests, can be empty
                             "Authorization": "Bearer JWT"
                         },
-                        "properties": { // Custom properties for the videoIndex widget this is for extensibility, clients with typed languages should represent this as open string->object
-                            "translations": {
-                                "en-EN": {
-                                    "uri": "https://www.contoso.com/vi/asw34eds/index/en-EN"
-                                },
-                                "he-IL": {
-                                    "uri": "https://www.contoso.com/vi/asw34eds/index/he-IL"
-                                }
-                            }
-                        }
+                        "translations": ["en-US","de-DE"]
                     },
                     "keyframeSprite": {
                         "schemaVersion": "1.0", // The versions of the schema of data needed by the widget
