@@ -16,7 +16,7 @@
                         "video_index": {
                             "type":"object",
                             "properties": {
-                                "uri": {
+                                "template_uri": {
                                     "type": "string"
                                 },
                                 "httpHeaders": {
@@ -34,6 +34,30 @@
                             "properties": {
                                 "template_uri": {
                                     "type": "string"
+                                },
+                                "httpHeaders": {
+                                    "type": "object",
+                                    "properties": {
+                                        "authorization": {
+                                            "type": "string"
+                                        }
+                                    }
+                                }                            
+                            }
+                        },
+                        "keyframes_sprite": {
+                            "type":"object",
+                            "properties": {
+                                "template_uri": {
+                                    "type": "string"
+                                },
+                                "httpHeaders": {
+                                    "type": "object",
+                                    "properties": {
+                                        "authorization": {
+                                            "type": "string"
+                                        }
+                                    }
                                 }
                             }
                         }
