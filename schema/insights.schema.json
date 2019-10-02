@@ -6,79 +6,67 @@
   "description": "Video Indexer Insights Widgets Config Schema",
   "type": "object",
   "properties": {
-    "accountId": { // Please remove, we know account and video id from the API call to get the widget
-      "type": "string"
-    },
-    "videoId": { // Please remove, we know account and video id from the API call to get the widget
-      "type": "string"
-    },
-    "data_sources": { // Why not use camelCase conventions and go for underscores?
+    "dataSources": {
       "type": "object",
       "properties": {
-        "index": { // Suggest to keep original videoIndex name
+        "videoIndex": {
           "type": "object",
-          "required": ["template_uri"],
-          "properties": { // I see you removed the 'properties' bag we originally had, I suggest to keep it, benefits static languages and can perhaps also simplify JSON schema reuse since the schema of data source is fixed except for properties bag content
-            "data_schema_version": {
+          "required": ["templateUrl"],
+          "properties": {
+            "properties": {
+              "type" : "object"
+            },
+            "dataSchemaVersion": {
               "description": "The versions of the schema of data needed by the widget",
               "type": "string"
             },
-            "init_language": { // I assume the template URL will have an optional template parameter for language?
+            "initLanguage": {
               "description": "The chosen language that the widget will have translation with, default is the source language",
               "type": "string"
             },
-            "template_uri": { // Please use the term 'URL' instead of 'URI', 'URI' is more broad than 'URL'
-              "description": "Url template of the index location", // Please document the required and optional template parameters and what we'll replace them with
+            "templateUrl": {
+              "description": "Url template of the index location.",
               "type": "string"
             },
             "http_headers": {
-              "type": "object",
-              "properties": { // We shouldn't define which headers are allowed, we'll send any headers we are asked to. Can schema describe an open dictionary string->string?
-                "authorization": {
-                  "type": "string"
-                }
-              }
+              "type": "object"
             },
             "translations": {
-              "description": "List of wanted translations",
+              "description": "List of wanted translations. example: ['en-us','de-de']",
               "type": "array",
               "items": {
-                "type": "string" // Looks like you're enforcing a unified template URL for all languages, let's not require customers to have the same URL template for all URLs we need, template should be an opt-in feature not a requirement
+                "type": "string"
               }
             }
           }
         },
-        "people_sprite": {
+        "peopleSprite": {
           "type": "object",
-          "properties": { // What about data schema version?
-            "template_uri": { // Same comments as above, regarding using URL term and regarding docs
+          "properties": {
+            "templateUrl": {
               "type": "string"
             },
             "httpHeaders": {
-              "type": "object",
-              "properties": { // Same comment as above, regarding open headers dictionary
-                "authorization": {
-                  "type": "string"
-                }
+              "type": "array",
+              "items": {
+                "type": "object"
               }
             }
           }
         },
-        "keyframes_sprite": {
+        "keyframesSprite": {
           "type": "object",
-          "properties": { // What about data schema version?
-            "template_uri": { // Same comments as above, regarding using URL term and regarding docs
+          "properties": {
+            "templateUrl": {
               "type": "string"
             },
             "httpHeaders": {
-              "type": "object",
-              "properties": { // Same comment as above, regarding open headers dictionary
-                "authorization": {
-                  "type": "string"
-                }
+              "type": "array",
+              "items": {
+                "type": "object"
               }
             },
-            "page_size": { // It's probably wise to have optional template URL parameter for the page size even though it's provided here, since it's common to implement paging with URLs that have both 'skip' and 'take' 
+            "page_size": {
               "type": "number",
               "minimum": 0
             }
@@ -86,7 +74,7 @@
         }
       }
     },
-    "locale": { // Originally this field and below ones were under "properties", meant to assist static languages with representing a generic widget schema. Suggest to keep that choice, ARM uses it for Azure resources JSON as well.
+    "locale": {
       "type": "string",
       "description": "The locale of the widget to render with"
     },
@@ -98,7 +86,7 @@
       "type": "string",
       "description": "The preset to be selected at first render. default to all"
     },
-    "widgets": { // If we're going to have this field to tell us which widgets to render, then different widgets set will require different config files, so let's remove this property and just specify that all data sources are optional, include the ones you want the widget to render
+    "widgets": {
       "description": "Control what insights to render. default is all",
       "type": "array",
       "items": {
