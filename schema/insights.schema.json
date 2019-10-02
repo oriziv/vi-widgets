@@ -9,6 +9,10 @@
     "dataSources": {
       "type": "object",
       "properties": {
+        "properties": {
+          "type": "object",
+          "description": "Extend this with other data sources or other stuff"
+        },
         "videoIndex": {
           "type": "object",
           "required": ["templateUrl"],
@@ -28,7 +32,7 @@
               "description": "Url template of the index location.",
               "type": "string"
             },
-            "http_headers": {
+            "httpHeaders": {
               "type": "object"
             },
             "translations": {
@@ -66,7 +70,7 @@
                 "type": "object"
               }
             },
-            "page_size": {
+            "pageSize": {
               "type": "number",
               "minimum": 0
             }
@@ -88,6 +92,13 @@
     },
     "widgets": {
       "description": "Control what insights to render. default is all",
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "downloadOptions": {
+      "description": "Control what download options to render. default is all",
       "type": "array",
       "items": {
         "type": "string"
